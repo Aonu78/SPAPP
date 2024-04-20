@@ -1,0 +1,302 @@
+<script
+    type="text/javascript"
+    src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"
+></script>
+<section class="section market" aria-label="market update" data-section style="padding: 0;">
+    <div class="container">
+        <div class="container-fluid" style="margin-top:10px">
+            
+          <div id="tvchart"></div>
+          
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table crypto-table" id="dataTable">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Symbol</th>
+                      <th scope="col">Market Cap</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Supply</th>
+                      <th scope="col">Vol(24h)</th>
+                      <th scope="col">%(24h)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><img src="./assets/images/coin-1.svg" /></td>
+                      <td>BTC</td>
+                      <td>$134.655,333</td>
+                      <td class="text-warning">$768.655</td>
+                      <td class="text-warning">$122.998</td>
+                      <td class="text-warning">$5.443.233,600</td>
+                      <td class="text-success">%5.54 <i class="fa fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+          
+                      <td>2</td>
+                      <td><img src="./assets/images/coin-2.svg" /> </td>
+                      <td>ETH</td>
+                      <td>$134.655,333</td>
+                      <td class="text-warning">$768.655</td>
+                      <td class="text-warning">$122.998</td>
+                      <td class="text-warning">$5.443.233,600</td>
+                      <td class="text-danger">%8.14 <i class="fa fa-arrow-down"></i></td>
+                    </tr>
+                    <tr>
+          
+                      <td>3</td>
+                      <td><img src="./assets/images/coin-3.svg" /> </td>
+                      <td>USTD</td>
+                      <td>$134.655,333</td>
+                      <td class="text-warning">$768.655</td>
+                      <td class="text-warning">$122.998</td>
+                      <td class="text-warning">$5.443.233,600</td>
+                      <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+          
+                        <td>4</td>
+                        <td><img src="./assets/images/coin-4.svg" /> </td>
+                        <td>BNB</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+          
+                        <td>5</td>
+                        <td><img src="./assets/images/coin-5.svg" /> </td>
+                        <td>USDC</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+          
+                        <td>6</td>
+                        <td><img src="./assets/images/coin-6.svg" /> </td>
+                        <td>XRP</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td><img src="./assets/images/coin-7.svg" /> </td>
+                        <td>ADA</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td><img src="./assets/images/coin-8.svg" /> </td>
+                        <td>DOGE</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td><img src="./assets/images/coin-9.svg" /> </td>
+                        <td>MATIC</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td><img src="./assets/images/coin-10.svg" /> </td>
+                        <td>XMR</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td><img src="./assets/images/coin-11.svg" /> </td>
+                        <td>LTC</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td><img src="./assets/images/coin-12.svg" /> </td>
+                        <td>DASH</td>
+                        <td>$134.655,333</td>
+                        <td class="text-warning">$768.655</td>
+                        <td class="text-warning">$122.998</td>
+                        <td class="text-warning">$5.443.233,600</td>
+                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      </tr>
+                  </tbody>
+                </table>
+                <div id="chartPlaceholder" class="chart-container"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <style>
+    
+.row{
+    .col-md-4{
+      margin-bottom:20px;
+    }
+  }
+  .crypto-table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    # padding: 10px;
+    thead {
+      th {
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+    tbody tr {
+      background: #fff;
+      -webkit-box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+      box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+      # height: 50px;
+  
+      td > * {
+        vertical-align: middle;
+      }
+      td:first-child {
+        -moz-border-radius: 10px 0 0 10px;
+        -webkit-border-radius: 10px 0 0 10px;
+      }
+      td:last-child {
+        -moz-border-radius: 0 10px 10px 0;
+        -webkit-border-radius: 0 10px 10px 0;
+      }
+      td img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  
+  .card.crypto-gradient-card {
+    color: #fff;
+    border: 0;
+  }
+  .gradient-1 {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+    background: #eb3349; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #f45c43,
+      #eb3349
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #f45c43,
+      #eb3349
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .gradient-2 {
+    -webkit-box-shadow: 0 1px 15px 1px #29ffc6;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+    background: #1cd8d2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #93edc7,
+      #1cd8d2
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #93edc7,
+      #1cd8d2
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .gradient-3 {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+    background: #00d2ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #3a7bd5,
+      #00d2ff
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #3a7bd5,
+      #00d2ff
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .table>tbody {
+    vertical-align: middle;
+}
+    </style>
+</section>
+<script>
+  // Declare variables only if they haven't been defined before
+  if (typeof chartProperties === 'undefined') {
+    var chartProperties = {
+      width: 350,
+      height: 100,
+      timeScale: {
+        timeVisible: true,
+        secondsVisible: false,
+      }
+    };
+  }
+
+  if (typeof domElement === 'undefined') {
+    var domElement = document.getElementById('tvchart');
+  }
+
+  if (typeof chart === 'undefined') {
+    var chart = LightweightCharts.createChart(domElement, chartProperties);
+  }
+
+  if (typeof candleSeries === 'undefined') {
+    var candleSeries = chart.addCandlestickSeries();
+  }
+
+  function fetchDataAndSetCandlestickData() {
+    fetch(`https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=1000`)
+      .then(res => res.json())
+      .then(data => {
+        const cdata = data.map(d => {
+          return {
+            time: d[0] / 1000,
+            open: parseFloat(d[1]),
+            high: parseFloat(d[2]),
+            low: parseFloat(d[3]),
+            close: parseFloat(d[4])
+          };
+        });
+        candleSeries.setData(cdata);
+      })
+      .catch(err => console.log(err)); // Using console.log directly
+  }
+
+  fetchDataAndSetCandlestickData();
+</script>
+
+<!--
+<script src="assets/js/jQuery/stocks.js"></script>
+-->
