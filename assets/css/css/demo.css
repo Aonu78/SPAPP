@@ -6,7 +6,9 @@
   padding: 0;
   box-sizing: inherit;
 }
-
+.tv-embed-widget-wrapper {
+   min-width: 90%;
+}
 body{
   min-height: 100vh;
   display: flex;

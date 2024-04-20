@@ -22,7 +22,9 @@
   outline: none; border: none;
 }
 
-
+    .main-width{
+        width: auto !important;
+    }
 
 html{
   font-size: 62.5%;
