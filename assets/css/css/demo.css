@@ -21,7 +21,7 @@ body{
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
-  background: #eee;
+  /* background: #eee; */
 }
 .cd__intro{
    padding: 60px 30px;
