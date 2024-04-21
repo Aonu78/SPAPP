@@ -2,11 +2,22 @@
     type="text/javascript"
     src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"
 ></script>
+<style>
+#tvchart_detail{
+  color: white;
+  font-size: small;
+  font-weight: 600;
+  text-align: center;
+}
+</style>
 <section class="section market" aria-label="market update" data-section style="padding: 0;">
     <div class="container">
         <div class="container-fluid" style="margin-top:10px">
             
           <div id="tvchart"></div>
+          <div id="tvchart_detail">
+            BTC
+          </div>
           
             <div class="row">
               <div class="col-md-12">
@@ -21,6 +32,7 @@
                       <th scope="col">Supply</th>
                       <th scope="col">Vol(24h)</th>
                       <th scope="col">%(24h)</th>
+                      <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -33,6 +45,7 @@
                       <td class="text-warning">$122.998</td>
                       <td class="text-warning">$5.443.233,600</td>
                       <td class="text-success">%5.54 <i class="fa fa-arrow-up"></i></td>
+                      <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
                     </tr>
                     <tr>
           
@@ -44,6 +57,7 @@
                       <td class="text-warning">$122.998</td>
                       <td class="text-warning">$5.443.233,600</td>
                       <td class="text-danger">%8.14 <i class="fa fa-arrow-down"></i></td>
+                      <td class="text-danger"><i class="fa fa-heart" style="font-size: large;"></i></td>
                     </tr>
                     <tr>
           
@@ -55,6 +69,7 @@
                       <td class="text-warning">$122.998</td>
                       <td class="text-warning">$5.443.233,600</td>
                       <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                      <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                     </tr>
                     <tr>
           
@@ -66,6 +81,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
           
@@ -77,6 +93,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
           
@@ -88,6 +105,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>7</td>
@@ -98,6 +116,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>8</td>
@@ -108,6 +127,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>9</td>
@@ -118,6 +138,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>10</td>
@@ -128,6 +149,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>11</td>
@@ -138,6 +160,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                       <tr>
                         <td>12</td>
@@ -148,6 +171,7 @@
                         <td class="text-warning">$122.998</td>
                         <td class="text-warning">$5.443.233,600</td>
                         <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa-regular fa-heart" style="font-size: large;"></i></td>
                       </tr>
                   </tbody>
                 </table>
@@ -300,3 +324,38 @@
 <!--
 <script src="assets/js/jQuery/stocks.js"></script>
 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get all table rows
+    var rows = document.querySelectorAll("#dataTable tbody tr");
+
+    // Add click event listener to each row
+    rows.forEach(function(row, index) {
+      row.addEventListener("click", function() {
+        // Get data from the clicked row
+        var rowData = Array.from(row.children).map(function(cell) {
+          return cell.textContent.trim();
+        });
+
+        // Create and show the alert
+        alert("Clicked row #" + rowData[0] + "\nName: " + rowData[2] + "\nSymbol: " + rowData[3]);
+      });
+    });
+  });
+  $(document).ready(function() {
+    // Add click event to table rows
+    $("#dataTable tbody tr").click(function() {
+      // Get name of the clicked cryptocurrency
+      var name = $(this).find("td:eq(2)").text().trim();
+      
+      // Change text of #tvchart_detail
+      $("#tvchart_detail").text(name);
+      
+      // Hide #tvchart for 1 second
+      $("#tvchart").hide();
+      setTimeout(function() {
+        $("#tvchart").show();
+      }, 1000);
+    });
+  });
+</script>

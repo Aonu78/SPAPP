@@ -27,14 +27,14 @@ $(document).ready(function () {
     //     view: "stocklist",
     //     load: "stocklist.html",
     // });
-    // app.route({
-    //     view: "stocklist",
-    //     load: "stockexchange.html",
-    // });
     app.route({
         view: "stocklist",
-        load: "exc.html",
+        load: "stockexchange.html",
     });
+    // app.route({
+    //     view: "stocklist",
+    //     load: "exc.html",
+    // });
 
     app.route({
         view: "fav",
