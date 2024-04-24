@@ -14,9 +14,7 @@
     <div class="container">
         <div class="container-fluid" style="margin-top:10px">
             
-          <div id="fav_tvchart"></div>
-          <div id="fav_tvchart_detail">
-            BTC
+            
           </div>
           
             <div class="row">
@@ -27,67 +25,17 @@
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
                       <th scope="col">Symbol</th>
-                      <th scope="col">Market Cap</th>
                       <th scope="col">Price</th>
                       <th scope="col">Supply</th>
-                      <th scope="col">Vol(24h)</th>
+                      <th scope="col">Market Cap</th>
                       <th scope="col">%(24h)</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td><img src="./assets/images/coin-1.svg" /></td>
-                      <td>BTC</td>
-                      <td>$134.655,333</td>
-                      <td class="text-warning">$768.655</td>
-                      <td class="text-warning">$122.998</td>
-                      <td class="text-warning">$5.443.233,600</td>
-                      <td class="text-success">%5.54 <i class="fa fa-arrow-up"></i></td>
-                      <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
-                    </tr>
-                    <tr>
-          
-                      <td>2</td>
-                      <td><img src="./assets/images/coin-2.svg" /> </td>
-                      <td>ETH</td>
-                      <td>$134.655,333</td>
-                      <td class="text-warning">$768.655</td>
-                      <td class="text-warning">$122.998</td>
-                      <td class="text-warning">$5.443.233,600</td>
-                      <td class="text-danger">%8.14 <i class="fa fa-arrow-down"></i></td>
-                      <td class="text-danger"><i class="fa fa-heart" style="font-size: large;"></i></td>
-                    </tr>
-                    <tr>
-          
-                        <td>3</td>
-                        <td><img src="./assets/images/coin-4.svg" /> </td>
-                        <td>BNB</td>
-                        <td>$134.655,333</td>
-                        <td class="text-warning">$768.655</td>
-                        <td class="text-warning">$122.998</td>
-                        <td class="text-warning">$5.443.233,600</td>
-                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
-                        <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
-                      </tr>
-                      
-                      <tr>
-          
-                        <td>4</td>
-                        <td><img src="./assets/images/coin-6.svg" /> </td>
-                        <td>XRP</td>
-                        <td>$134.655,333</td>
-                        <td class="text-warning">$768.655</td>
-                        <td class="text-warning">$122.998</td>
-                        <td class="text-warning">$5.443.233,600</td>
-                        <td class="text-success">%6.85 <i class="fa fa-arrow-up"></i></td>
-                        <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
-                      </tr>
-                      
+                    
                   </tbody>
                 </table>
-                <div id="chartPlaceholder" class="chart-container"></div>
               </div>
             </div>
           </div>
@@ -187,51 +135,6 @@
 }
     </style>
 </section>
-<script>
-  // Declare variables only if they haven't been defined before
-  if (typeof chartProperties === 'undefined') {
-    var chartProperties = {
-      width: 350,
-      height: 100,
-      timeScale: {
-        timeVisible: true,
-        secondsVisible: false,
-      }
-    };
-  }
-
-  if (typeof domElement === 'undefined') {
-    var domElement = document.getElementById('fav_tvchart');
-  }
-
-  if (typeof chart === 'undefined') {
-    var chart = LightweightCharts.createChart(domElement, chartProperties);
-  }
-
-  if (typeof candleSeries === 'undefined') {
-    var candleSeries = chart.addCandlestickSeries();
-  }
-
-  function fetchDataAndSetCandlestickData() {
-    fetch(`https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=1000`)
-      .then(res => res.json())
-      .then(data => {
-        const cdata = data.map(d => {
-          return {
-            time: d[0] / 1000,
-            open: parseFloat(d[1]),
-            high: parseFloat(d[2]),
-            low: parseFloat(d[3]),
-            close: parseFloat(d[4])
-          };
-        });
-        candleSeries.setData(cdata);
-      })
-      .catch(err => console.log(err)); // Using console.log directly
-  }
-
-  fetchDataAndSetCandlestickData();
-</script>
 
 <!--
 <script src="assets/js/jQuery/stocks.js"></script>
@@ -255,15 +158,9 @@
     });
   });
   $(document).ready(function() {
-    // Add click event to table rows
     $("#dataTable tbody tr").click(function() {
-      // Get name of the clicked cryptocurrency
       var name = $(this).find("td:eq(2)").text().trim();
-      
-      // Change text of #fav_tvchart_detail
       $("#fav_tvchart_detail").text(name);
-      
-      // Hide #fav_tvchart for 1 second
       $("#fav_tvchart").hide();
       setTimeout(function() {
         $("#fav_tvchart").show();
@@ -271,3 +168,93 @@
     });
   });
 </script>
+
+
+
+
+<script>
+  //console.log("Start Loading Page");
+
+  // Function to populate the table from localStorage
+  function populateTableFromStorage() {
+      // Get data from localStorage
+      //console.log("populateTableFromStorage");
+      let data = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      // Get the table body
+      let tbody = document.querySelector("#dataTable tbody");
+
+      // Clear existing table rows
+      tbody.innerHTML = "";
+
+      // Populate the table with data from localStorage
+      //console.log(tbody);
+      Object.keys(data).forEach(function(rowKey, index) {
+        let rowData = data[rowKey];
+        let row = `<tr data-index="${index}">
+                        <td>${index + 1}</td>
+                        <td><img src="${rowData.col1}"></td>
+                        <td>${rowData.col2}</td>
+                        <td class="text-warning">${rowData.col3}</td>
+                        <td class="text-warning">${rowData.col4}</td>
+                        <td class="text-warning">${rowData.col5}</td>
+                        <td class="text-success">${rowData.col6}<i class="fa fa-arrow-up"></i></td>
+                        <td class="text-success"><i class="fa fa-heart" style="font-size: large;"></i></td>
+                    </tr>`;
+        tbody.innerHTML += row;
+    });
+      
+  };
+  //console.log("Table Start");
+  // Call the function to populate the table from localStorage when the page loads
+  populateTableFromStorage();
+  //console.log("Table populated from localStorage.");
+
+  // Click event listener using event delegation
+  document.querySelector("#dataTable").addEventListener("click", function(event) {
+    //console.log("document.querySelector(#dataTable)");
+      if (event.target.classList.contains("fa-heart")) {
+          // Get the clicked row index
+          var name = $(this).find("td:eq(2)").text().trim(); // Get the name from column 2
+          var rowIndex = name.replace(/\s+/g, '-').toLowerCase(); // Generate ID based on name
+          
+          // let rowIndex = event.target.closest("tr").getAttribute("data-index");
+
+          // Get data from localStorage
+          let data = JSON.parse(localStorage.getItem("favorites")) || [];
+
+          // Toggle heart icon
+          event.target.classList.toggle("far");
+          event.target.classList.toggle("fas");
+
+          // Add or remove the clicked row's data to/from localStorage
+          let rowData = data[rowIndex];
+          if (rowData) {
+              delete data[rowIndex];
+              //console.log("Removed row data from localStorage:", rowData);
+          } else {
+              rowData = {
+                  name: event.target.closest("tr").querySelector("td:nth-child(2)").textContent,
+                  symbol: event.target.closest("tr").querySelector("td:nth-child(3)").textContent,
+                  price: event.target.closest("tr").querySelector("td:nth-child(4)").textContent,
+                  supply: event.target.closest("tr").querySelector("td:nth-child(5)").textContent,
+                  marketCap: event.target.closest("tr").querySelector("td:nth-child(6)").textContent,
+                  percent: event.target.closest("tr").querySelector("td:nth-child(7)").textContent
+              };
+              data[rowIndex] = rowData;
+              //console.log("Added row data to localStorage:", rowData);
+          };
+
+          // Update localStorage with the modified data
+          localStorage.setItem("favorites", JSON.stringify(data));
+          //console.log("Updated localStorage:", data);
+
+          // Repopulate the table with the updated data
+          populateTableFromStorage();
+          console.log("Table repopulated from localStorage.");
+      };
+  });
+
+
+</script>
+

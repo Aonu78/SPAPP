@@ -33,11 +33,18 @@ document.getElementById('sign-up-form').addEventListener('submit', function(even
         document.getElementById('password').value = '';
 
         // Show success message
-        document.getElementById('error-call').style.display = "none";
-        document.getElementById('success-call').style.display = "block";
-        setTimeout(function() {
-            window.location.hash = 'login';
-        }, 2000); // 2000 milliseconds (2 seconds) delay
+
+        $("#sign-up-button").html('<i class="fa fa-spinner fa-spin"></i>');
+
+        setTimeout(function() { 
+            document.getElementById('error-call').style.display = "none";
+            document.getElementById('success-call').style.display = "block";
+            $("#sign-up-button").html("Sign Up");
+            setTimeout(function() {
+                window.location.hash = 'login';
+            }, 3000);
+            
+        }, 3000); // 2000 milliseconds (2 seconds) delay
     }
 
     return false;
