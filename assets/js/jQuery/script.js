@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
     var isLoggedIn = localStorage.getItem('loggedInUser') !== null;
 
     if (isLoggedIn) {
-        window.location.hash = 'account';        
+        //window.location.hash = 'account';        
         document.getElementById('nav-login').setAttribute('href', '#account');
         document.getElementById('top-login').removeAttribute('href');
         document.getElementById('top-login').innerText = 'Logout'; 
